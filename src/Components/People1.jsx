@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PersonCard from './PersonCard';
+import PeopleCard2 from './PeopleCard2';
 
 class People extends Component {
     constructor(props) {
@@ -20,8 +20,8 @@ class People extends Component {
     }
 
     renderPeople() {
-        return this.state.people.map(people => {
-            return <PersonCard key={people.id} person={people} />
+        return this.state.people.map(person => {
+            return <PeopleCard2 key={person.id} person={person} />
         })
     }
     render() {

@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
-import SingleFilmCard from './SingleFilmCard'
+import SinglePerson from './SinglePerson4'
 
 class IndividualFilm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            film: {}
+            person: {}
         }
     }
 
     async componentDidMount() {
         try {
-            let filmFetch = await fetch(`https://ghibliapi.herokuapp.com/films/${this.props.params.match.id}`)
-            let film = await filmFetch.json();
-            this.setState({ film })
+            let peepFetch = await fetch(`https://ghibliapi.herokuapp.com/people/${this.props.match.params.id}`)
+            let person = await peepFetch.json();
+            this.setState({ person })
         } catch (err) {
             console.log(err);
         }
     }
     
     render() {
-        let { title } = this.state.film
         return (
             <>
             <main>
-                <SingleFilmCard key={this.state.film.id} film={this.state.film} />
+                <SinglePerson key={this.state.person.id} person={this.state.person} />
             </main>
             </>
         );

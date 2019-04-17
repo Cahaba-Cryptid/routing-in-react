@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from './FilmCard';
+import FilmCard from './FilmCard2';
 
 class Films extends Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class Films extends Component {
         //pushes data to be rendered
         return this.state.films.map(film => {
             //pushes data into new array
-            return <Card key={film.id} film={film} />;
+            return <FilmCard key={film.id} film={film} />;
         })
     }
 
